@@ -47,7 +47,10 @@ app.get("/noticias/:id", (req, res) => {
   if (!noticia) {
     return res.status(404).json({ erro: "Notícia não encontrada" });
   }
-  res.json(noticia);
+  res.json({
+    mensagem: "Detalhe da notícia carregado com sucesso",
+    noticia
+  });
 });
 
 // POST: criar notícia
